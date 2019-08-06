@@ -37,9 +37,13 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
-- task: AzureRmWebAppDeployment@3
-  displayName: 'Deploy  dir1: $(System.ArtifactsDirectory) - dir2: $(Build.ArtifactStagingDirectory)/$(buildConfiguration) '
-  inputs:
-    azureSubscription: '<Azure service connection>'
-    WebAppName: '<Name of web app>'
-    Package: $(System.ArtifactsDirectory)/**/*.zip    
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+  displayName: 'Info dir1: $(System.ArtifactsDirectory) - dir2: $(Build.ArtifactStagingDirectory)/$(buildConfiguration) '
+
+#- task: AzureRmWebAppDeployment@3
+#  displayName: 'Deploy  dir1: $(System.ArtifactsDirectory) - dir2: $(Build.ArtifactStagingDirectory)/$(buildConfiguration) '
+#  inputs:
+#    azureSubscription: '<Azure service connection>'
+#    WebAppName: '<Name of web app>'
+#    Package: $(System.ArtifactsDirectory)/**/*.zip    
+
