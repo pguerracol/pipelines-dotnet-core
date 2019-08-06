@@ -38,10 +38,10 @@ steps:
     zipAfterPublish: true
 
 - script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber), $(System.ArtifactsDirectory), $(Build.ArtifactStagingDirectory)/$(buildConfiguration) " > buildinfo.txt'
-  displayName: 'Info dir1: $(System.ArtifactsDirectory) - dir2: $(Build.ArtifactStagingDirectory)/$(buildConfiguration) '
+  displayName: 'Info log directories'
 
 #- task: AzureRmWebAppDeployment@3
-#  displayName: 'Deploy  dir1: $(System.ArtifactsDirectory) - dir2: $(Build.ArtifactStagingDirectory)/$(buildConfiguration) '
+#  displayName: 'Deploy project '
 #  inputs:
 #    azureSubscription: '<Azure service connection>'
 #    WebAppName: '<Name of web app>'
