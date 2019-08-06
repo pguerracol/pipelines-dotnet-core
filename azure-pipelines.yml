@@ -37,7 +37,7 @@ steps:
     arguments: '--no-build --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)/$(buildConfiguration)'
     zipAfterPublish: true
 
-- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber)" > buildinfo.txt'
+- script: 'echo "$(Build.DefinitionName), $(Build.BuildId), $(Build.BuildNumber), $(System.ArtifactsDirectory), $(Build.ArtifactStagingDirectory)/$(buildConfiguration) " > buildinfo.txt'
   displayName: 'Info dir1: $(System.ArtifactsDirectory) - dir2: $(Build.ArtifactStagingDirectory)/$(buildConfiguration) '
 
 #- task: AzureRmWebAppDeployment@3
