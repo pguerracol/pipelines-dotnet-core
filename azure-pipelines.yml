@@ -47,3 +47,9 @@ steps:
 #    WebAppName: '<Name of web app>'
 #    Package: $(System.ArtifactsDirectory)/**/*.zip    
 
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Visual Studio Professional(0843fe79-3877-4b30-95fd-0983b317c99e)'
+    appType: 'webAppLinux'
+    appName: 'webappdevops01'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
