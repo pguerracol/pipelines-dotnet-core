@@ -52,4 +52,4 @@ steps:
     azureSubscription: 'Visual Studio Professional(0843fe79-3877-4b30-95fd-0983b317c99e)'
     appType: 'webAppLinux'
     appName: 'webappdevops01'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)/**/*.zip'
