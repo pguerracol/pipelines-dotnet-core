@@ -53,3 +53,18 @@ steps:
     appType: 'webAppLinux'
     appName: 'webappdevops01'
     package: '$(Build.ArtifactStagingDirectory)/$(buildConfiguration)/**/*.zip'
+
+#Demo para usar un ftp
+#- task: FtpUpload@2
+  #inputs:
+   # credentialsOption: 'inputs'
+   # serverUrl: 'ftp://waws-prod-dm1-161.ftp.azurewebsites.windows.net'
+   # username: 'pablo.guerra'
+   # password: 'WachuWachu'
+   # rootDirectory: '/home'
+   # filePatterns: '**'
+   # remoteDirectory: '/upload/$(Build.BuildId)/'
+   # clean: false
+   # cleanContents: false
+   # preservePaths: false
+   # trustSSL: false
